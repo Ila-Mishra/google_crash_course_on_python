@@ -43,8 +43,11 @@ def calculate_frequencies(file_contents):
     "all", "any", "both", "each", "few", "more", "some", "such", "no", "nor", "too", "very", "can", "will", "just"]
     
     # LEARNER CODE START HERE
+    #going through each text, character by character using isalpha and spiliting text to words by split method
     file_contents = "".join((char if char.isalpha() else " ") for char in file_contents).lower().split()
+    #Storing words by excluding uninteresting words
     resultWords = [word for word in file_contents if word not in uninteresting_words]
+    #creating a dictionary by using count method to get the frequescy of each word, word as key and count frequency as value
     freq = {word: file_contents.count(word) for word in resultWords}
     
     #wordcloud
